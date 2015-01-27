@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ThingM.Blink1.ColorProcessor;
 
-namespace TinyCbn
+namespace TinyCbn.General
 {
     public class CbnWrapper
     {

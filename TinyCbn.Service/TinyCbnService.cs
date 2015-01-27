@@ -1,38 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
+using System.ServiceProcess;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using ThingM.Blink1;
 using TinyCbn.General;
 
-namespace TinyCbn
+namespace TinyCbn.Service
 {
-    class Program
+    public partial class TinyCbnService : ServiceBase
     {
-        static void Main(string[] args)
+        CancellationTokenSource cts = new CancellationTokenSource();
+
+        public TinyCbnService()
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-
-            Task t = RunAsync(cts);
-
-            Console.ReadLine();
-            cts.Cancel();
-            t.Wait();
-
-            using (Blink1 blink = new Blink1())
-            {
-                blink.Open();
-                blink.SetColor(0, 0, 0);
-                blink.Close();
-            }
-
-            Console.WriteLine("Press any key to continue.");
-            Console.ReadKey();
+            InitializeComponent();
         }
 
-        static async Task RunAsync(CancellationTokenSource cts)
+        protected override void OnStart(string[] args)
+        {
+            var task = RunAsync(cts);
+        }
+
+        protected override void OnStop()
+        {
+            cts.Cancel();
+        }
+
+        private async Task RunAsync(CancellationTokenSource cts)
         {
             try
             {
@@ -52,7 +52,6 @@ namespace TinyCbn
                         {
                             if (cts.IsCancellationRequested)
                                 break;
-                            Console.WriteLine(string.Format("Fading to ({0},{1},{2})", color.Red, color.Green, color.Blue));
                             blink.FadeToColor(1000, color, true);
                             Thread.Sleep(5000);
                         }

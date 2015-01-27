@@ -1,7 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyCbn", "TinyCbn\TinyCbn.csproj", "{9F37844C-9062-40D5-9872-7DC0B893D4D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyCbn.Service", "TinyCbn.Service\TinyCbn.Service.csproj", "{2FE1F1A2-5401-4EA3-9D79-40532EA44CCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyCbn.General", "TinyCbn.General\TinyCbn.General.csproj", "{AE966314-E331-41A8-B4CD-A13769AF47A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +19,14 @@ Global
 		{9F37844C-9062-40D5-9872-7DC0B893D4D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F37844C-9062-40D5-9872-7DC0B893D4D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F37844C-9062-40D5-9872-7DC0B893D4D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FE1F1A2-5401-4EA3-9D79-40532EA44CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE1F1A2-5401-4EA3-9D79-40532EA44CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE1F1A2-5401-4EA3-9D79-40532EA44CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE1F1A2-5401-4EA3-9D79-40532EA44CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE966314-E331-41A8-B4CD-A13769AF47A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE966314-E331-41A8-B4CD-A13769AF47A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE966314-E331-41A8-B4CD-A13769AF47A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE966314-E331-41A8-B4CD-A13769AF47A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
