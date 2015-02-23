@@ -1,7 +1,7 @@
 __author__ = 'Mattias'
 import time
 from utils import coloursweep
-from utils import floorcolours
+from colourbynumbers import api
 from neopixel import *
 
 
@@ -18,7 +18,7 @@ if __name__ == '__main__':
 	strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS)
 	strip.begin()
 
-	floors = floorcolours.get_floor_colours()
+	floors = api.get_floor_colours()
 	index = 0
 	for floor in sorted(floors):
 		colour = floors[floor]
@@ -31,7 +31,7 @@ if __name__ == '__main__':
 	
 	currentFloors = floors
 	while True:
-		floors = floorcolours.get_floor_colours()
+		floors = api.get_floor_colours()
 		coloursweep.colour_sweep(strip, currentFloors, floors, 1)
 		print "Waiting..."
 		currentFloors = floors
